@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="ar">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Full Stack Solutions — مكتب برمجة</title>
+  <meta name="description" content="Full Stack Solutions - خدمات برمجة مواقع وتطبيقات، تصميم واجهات، وتطبيقات جاهزة للحجز عبر واتساب.">
+  <meta name="keywords" content="Full Stack Solutions, برمجة, تطوير ويب, تطبيقات, تصميم مواقع, الأردن">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Ccircle cx='50' cy='50' r='48' fill='%231f2937'/%3E%3Ctext x='50' y='58' font-size='36' font-family='Arial' text-anchor='middle' fill='%23fff'%3EFS%3C/text%3E%3C/svg%3E">
+  <style>
+    :root{
+      --accent:#0ea5a4;
+      --bg:#0f172a;
+      --card:#0b1220;
+      --muted:#94a3b8;
+      --glass: rgba(255,255,255,0.04);
+      --radius:16px;
+      --container:1100px;
+      --font-family: 'Segoe UI', Tahoma, Arial, sans-serif;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;padding:0;min-height:100%;background:linear-gradient(180deg,#071026 0%, #0b1220 60%);
+      color:#e6eef6;font-family:var(--font-family);
+      -webkit-font-smoothing:antialiased;line-height:1.5;direction:rtl;
+    }
+    .wrap{max-width:var(--container);margin:0 auto;padding:48px 20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .brand{display:flex;align-items:center;gap:14px}
+    .logo{width:64px;height:64px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#0369a1);
+      display:flex;align-items:center;justify-content:center;font-weight:700;box-shadow:0 6px 24px rgba(2,6,23,0.6)}
+    .logo small{font-size:18px;color:#fff}
+    nav{display:flex;gap:14px;align-items:center}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:10px}
+    nav a:hover{color:#fff;background:rgba(255,255,255,0.02)}
+    .hero{display:flex;align-items:center;gap:36px;margin-top:40px}
+    .hero-left{flex:1}
+    .kicker{display:inline-block;background:var(--glass);padding:6px 10px;border-radius:999px;color:var(--accent);font-weight:600;margin-bottom:18px}
+    h1{font-size:42px;margin:0 0 10px}
+    p.lead{color:var(--muted);margin:0 0 18px;max-width:740px}
+    .cta{display:flex;gap:12px}
+    .btn{background:var(--accent);color:#042023;padding:12px 18px;border-radius:12px;text-decoration:none;font-weight:700;box-shadow:0 8px 30px rgba(14,165,164,0.12)}
+    .btn.ghost{background:transparent;border:1px solid rgba(255,255,255,0.06);color:var(--muted);font-weight:600}
+    .cards{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:16px;margin-top:36px}
+    .card{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));
+      padding:18px;border-radius:14px;border:1px solid rgba(255,255,255,0.03)}
+    .card h3{margin:0 0 8px;font-size:18px}
+    .card p{margin:0;color:var(--muted);font-size:14px}
+    .portfolio{margin-top:46px}
+    .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+    .thumb{height:140px;border-radius:12px;background:linear-gradient(135deg,#062238,#062a3a);
+      display:flex;align-items:center;justify-content:center;color:rgba(255,255,255,0.9);font-weight:700;text-decoration:none}
+    .thumb:hover{background:linear-gradient(135deg,#0ea5a4,#0369a1);color:#fff}
+    .two-col{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:36px}
+    .contact-card{padding:18px;border-radius:12px;background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border:1px solid rgba(255,255,255,0.03)}
+    .field{display:flex;flex-direction:column;margin-bottom:12px}
+    .field label{font-size:13px;color:var(--muted);margin-bottom:6px}
+    input,textarea{background:transparent;border:1px solid rgba(255,255,255,0.04);padding:10px;border-radius:8px;color:inherit}
+    textarea{min-height:110px}
+    .muted{color:var(--muted);font-size:13px}
+    footer{margin:46px 0 20px;color:var(--muted);text-align:center}
+    .whatsapp{position:fixed;right:22px;bottom:22px;background:linear-gradient(180deg,#25D366,#128C7E);width:60px;height:60px;
+      border-radius:999px;display:flex;align-items:center;justify-content:center;box-shadow:0 8px 30px rgba(18,140,126,0.18);cursor:pointer}
+    .whatsapp svg{width:26px;height:26px;fill:white}
+    @media (max-width:900px){
+      header{flex-direction:column;align-items:flex-start}
+      .hero{flex-direction:column}
+      .grid{grid-template-columns:repeat(1,1fr)}
+      .two-col{grid-template-columns:1fr}
+      .logo{width:56px;height:56px}
+      h1{font-size:32px}
+    }
+    .fade-up{opacity:0;transform:translateY(12px);transition:all 600ms cubic-bezier(.2,.9,.3,1)}
+    .fade-up.in{opacity:1;transform:none}
+    .stagger{transition-delay:120ms}
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <header>
+      <div class="brand">
+        <div class="logo"><small>FS</small></div>
+        <div>
+          <div style="font-weight:800;font-size:18px">Full Stack Solutions</div>
+          <div class="muted" style="font-size:13px">مكتب برمجة وتطوير تطبيقات</div>
+        </div>
+      </div>
+      <nav>
+        <a href="#about">من نحن</a>
+        <a href="#services">خدماتنا</a>
+        <a href="#work">أعمالنا</a>
+        <a href="#contact">تواصل</a>
+      </nav>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-left">
+          <div class="kicker">Full Stack Solutions</div>
+          <h1 class="fade-up">نصمم ونطوّر حلول ويب وتطبيقات متكاملة</h1>
+          <p class="lead fade-up">نقدّم خدمات برمجة مواقع ، واجهات مستخدم جذابة، وخدمات صيانة وحلول سحابية مضمونة. نوصل فكرتك من التصميم إلى الإنتاج بسرعة وثقة.</p>
+          <div class="cta">
+            <a class="btn" id="btn-wp" href="#contact">حجز عبر واتساب</a>
+            <a class="btn ghost" href="#work">شاهد أعمالنا</a>
+          </div>
+
+          <div class="cards" style="margin-top:24px">
+            <div class="card fade-up stagger"><h3>تطوير واجهات (Frontend)</h3><p>HTML, CSS, JS, php — تصميم واجهات سريعة ومتجاوبة.</p></div>
+            <div class="card fade-up stagger"><h3>تصميم وتجربة مستخدم</h3><p>تصاميم واضحة، قابلية استخدام عالية، وتحويل الزوار إلى عملاء.</p></div>
+          </div>
+        </div>
+        <div class="hero-right" style="flex:0 0 380px">
+          <div style="border-radius:18px;padding:18px;background:linear-gradient(180deg,#07283a,#022131);border:1px solid rgba(255,255,255,0.03)">
+            <h3 style="margin:0 0 8px">خطة بسيطة للمشروع</h3>
+            <ol style="color:var(--muted);margin:0;padding-left:18px">
+              <li>فهم المتطلبات</li>
+              <li>تصميم واجهات أولية</li>
+              <li>تطوير وتسليم نسخة تجريبية</li>
+              <li>اختبار وإطلاق</li>
+            </ol>
+            <p class="muted" style="margin-top:12px">سعر تقديري حسب متطلبات المشروع — تواصل عبر الواتساب للحجز.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="about" class="fade-up" style="margin-top:60px;text-align:center">
+        <h2>من نحن</h2>
+        <p class="muted" style="max-width:880px;margin:auto">Full Stack Solutions فريق برمجي متخصص في بناء تطبيقات ومواقع احترافية. نعمل مع الشركات الصغيرة والمتوسطة لتقديم حلول تقنية قابلة للتوسع، مع التركيز على الأداء، الأمان، وتجربة المستخدم.</p>
+      </section>
+
+      <section id="services" style="margin-top:30px">
+        <h2>خدماتنا</h2>
+        <div class="cards">
+          <div class="card fade-up"><h3>مواقع تعريفية وتسويقية</h3><p>مواقع سريعة، متوافقة مع السيو، وتتحول لعملاء.</p></div>
+          <div class="card fade-up"><h3>متاجر إلكترونية</h3><p>أنظمة دفع آمنة، إدارة منتجات، وتجربة شراء سلسة.</p></div>
+
+        </div>
+      </section>
+      <!-- لماذا نحن -->
+<section id="why" class="fade-up" style="margin-top:46px">
+  <h2>لماذا تختارنا؟</h2>
+  <div class="cards">
+    <div class="card fade-up"><h3>دعم فني 24/7</h3><p>نضمن سرعة الاستجابة وحل جميع المشاكل في أي وقت.</p></div>
+    <div class="card fade-up"><h3>تسليم المشاريع في الوقت المحدد</h3><p>الالتزام بالمواعيد جزء من ثقافتنا المهنية.</p></div>
+    <div class="card fade-up"><h3>أسعار تنافسية</h3><p>خدمات عالية الجودة بأسعار عادلة تناسب جميع الشركات.</p></div>
+    <div class="card fade-up"><h3>ضمان جودة الكود</h3><p>الكود نظيف، قابل للتوسع، وصديق للسيو والأداء.</p></div>
+  </div>
+</section>
+
+
+
+      <section id="work" class="portfolio">
+        <h2>أعمالنا السابقة</h2>
+        <div class="grid">
+          <a class="thumb fade-up" href="https://ibrahimzeedat.github.io/gate3/" target="_blank">Gate 3</a>
+          <a class="thumb fade-up" href="https://ibrahimzeedat.github.io/gate2/" target="_blank">Gate 2</a>
+          <a class="thumb fade-up" href="https://ibrahimzeedat.github.io/h/" target="_blank">H Project</a>
+        </div>
+      </section>
+
+      <section id="contact" style="margin-top:36px">
+        <h2>تواصل معنا</h2>
+        <div class="two-col">
+          <div class="contact-card fade-up">
+            <p class="muted">اترك لنا رسالة أو تواصل مباشرة عبر الواتساب للحجز:</p>
+            <p style="margin:8px 0;font-weight:800">Full Stack Solutions</p>
+            <p class="muted">📞 الهاتف: 0790361296</p>
+            <p class="muted">📧 البريد: <a href="mailto:ibrahimzeedat720@gmail.com" style="color:#0ea5a4">ibrahimzeedat720@gmail.com</a></p>
+            <div style="margin-top:12px">
+              <a class="btn" id="btn-wp-2" href="#">احجز عبر واتساب الآن</a>
+            </div>
+          </div>
+
+          <form class="contact-card fade-up" onsubmit="return submitForm(event)">
+            <div class="field"><label>الاسم</label><input id="name" placeholder="اسمك" required></div>
+            <div class="field"><label>البريد الإلكتروني</label><input id="email" type="email" placeholder="example@mail.com" required></div>
+            <div class="field"><label>الرسالة</label><textarea id="message" placeholder="أخبرنا عن مشروعك"></textarea></div>
+            <div style="display:flex;gap:10px;align-items:center">
+              <button class="btn" type="submit">ارسال</button>
+              <div class="muted">أو تواصل عبر الواتساب</div>
+            </div>
+             <div style="margin-top:12px">
+              <a class="btn" id="btn-wp-2" href="#">احجز عبر واتساب الآن</a>
+            </div>
+          </form>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Full Stack Solutions — جميع الحقوق محفوظة
+    </footer>
+  </div>
+
+  <div class="whatsapp" id="whatsappFloat" title="تواصل عبر واتساب">
+    <svg viewBox="0 0 24 24"><path d="M20.52 3.48A11.86 11.86 0 0 0 12 .75C6.21.75 1.5 5.46 1.5 11.25c0 1.98.52 3.9 1.5 5.6L.75 23.25l6.6-2.25A11.44 11.44 0 0 0 12 22.5c5.79 0 10.5-4.71 10.5-10.5 0-2.86-1.1-5.53-3.98-8.52zM12 20.25c-1.3 0-2.56-.3-3.68-.88l-.26-.14-3.93 1.34 1.34-3.83-.16-.27A8.73 8.73 0 0 1 3.75 11.25 8.25 8.25 0 0 1 12 3c4.56 0 8.25 3.69 8.25 8.25S16.56 19.5 12 19.5z"/></svg>
+  </div>
+
+  <script>
+    const whatsappNumber = '962790361296';
+    const defaultMessage = encodeURIComponent('مرحبًا Full Stack Solutions، أرغب بالحجز/الاستفسار عن خدمة.');
+    document.getElementById('year').textContent = new Date().getFullYear();
+    document.addEventListener('DOMContentLoaded', ()=>{
+      document.querySelectorAll('.fade-up').forEach((el,i)=>setTimeout(()=>el.classList.add('in'),120*i));
+      const wpUrl = `https://wa.me/${whatsappNumber}?text=${defaultMessage}`;
+      document.getElementById('btn-wp').href = wpUrl;
+      document.getElementById('btn-wp-2').href = wpUrl;
+      document.getElementById('whatsappFloat').addEventListener('click',()=>window.open(wpUrl,'_blank'));
+      document.querySelectorAll('nav a').forEach(a=>{
+        a.addEventListener('click',e=>{
+          e.preventDefault();
+          const target=document.querySelector(a.getAttribute('href'));
+          if(target) target.scrollIntoView({behavior:'smooth',block:'start'});
+        });
+      });
+    });
+    function submitForm(e){
+      e.preventDefault();
+      const name=document.getElementById('name').value.trim();
+      const email=document.getElementById('email').value.trim();
+      const message=document.getElementById('message').value.trim();
+      const text=encodeURIComponent(`مرحبًا Full Stack Solutions!\nالاسم: ${name}\nالبريد: ${email}\nالرسالة: ${message}`);
+      const wp=`https://wa.me/${whatsappNumber}?text=${text}`;
+      window.open(wp,'_blank');
+      return false;
+    }
+  </script>
+  <!-- Floating Call Buttons -->
+<div style="position:fixed;left:22px;bottom:22px;display:flex;flex-direction:column;gap:12px;z-index:999">
+  <a href="tel:0790361296" style="background:linear-gradient(180deg,#f59e0b,#b45309);color:#fff;padding:14px 18px;border-radius:999px;text-align:center;font-weight:700;text-decoration:none;box-shadow:0 8px 20px rgba(0,0,0,0.3)">
+    📞 اتصل الآن: 0790361296
+  </a>
+ 
+</div>
+
+</body>
+</html>
